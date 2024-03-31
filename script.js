@@ -22,4 +22,5 @@ const resetButton = document.createElement("button");
 resetButton.textContent = "reset";
 resetButton.classList = "button";
 inputArea.appendChild(resetButton);
+container.appendChild(inputArea);
 
