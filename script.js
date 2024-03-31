@@ -34,9 +34,8 @@ startButton.addEventListener('click',startGrid);
 
 //created a div for credentials area.
 const credentials = document.createElement("div");
-credentials.classList = "credentails";
-credentials.innerHTML = `created by : anand raj
-                            github : <a href ='https://github.com/AnandRaj2224'>anand raj</a>`
+credentials.classList = "credentials";
+credentials.innerHTML = `created by :<a href ='https://github.com/AnandRaj2224'>anand raj</a>`
 container.appendChild(credentials);
 
 //function for starting the grid.
