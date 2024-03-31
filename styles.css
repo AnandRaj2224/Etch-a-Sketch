@@ -38,3 +38,19 @@
   font-weight: bolder;
   text-transform: uppercase;
 }
+.gameArea {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid gray;
+  height: 600px;
+  width:  500px;
+}
+
+.elements {
+  border: .5px solid grey;
+  box-sizing: border-box;
+}
+
+
+
+
