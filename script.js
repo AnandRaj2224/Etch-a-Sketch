@@ -24,6 +24,7 @@ resetButton.textContent = "reset";
 resetButton.classList = "button";
 inputArea.appendChild(resetButton);
 container.appendChild(inputArea);
+resetButton.addEventListener('click',clearGrid);
 
 //created a div for area to play the game.
 const gameArea = document.createElement("div");
@@ -35,11 +36,9 @@ startButton.addEventListener('click',startGrid);
 function startGrid (){
   const gameArea = document.querySelector(".gameArea");
   const input = document.querySelector(".input");
-  const value = input.value;
-
-  gameArea.style.gridTemplateColumns = `repeat(${value}, 1fr)`;
-  gameArea.style.gridTemplateRows = `repeat(${value}, 1fr)`;
-
+  gameArea.innerHTML = '';
+  let value = input.value;
+  if(value==='')  value =5;
   for(let i =0;i<value*value;i++)
   {
     let gridDimensions = 100 / value;
@@ -57,4 +56,11 @@ const elements = event.target;
   const green = (Math.random()*255);
   const blue = (Math.random()*255);
   elements.style.backgroundColor =`rgb(${red},${green},${blue})`;
+}
+// function for reseting the grid to default.
+function clearGrid(){
+  const elements = document.querySelectorAll(".elements");
+  elements.forEach(element => {
+    element.style.backgroundColor = `rgb(0,0,0)`; 
+  });
 }
