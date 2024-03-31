@@ -36,20 +36,16 @@ function startGrid (){
   const gameArea = document.querySelector(".gameArea");
   const input = document.querySelector(".input");
   const value = input.value;
-  for(let i =0;i<value;i++)
+
+  gameArea.style.gridTemplateColumns = `repeat(${value}, 1fr)`;
+  gameArea.style.gridTemplateRows = `repeat(${value}, 1fr)`;
+
+  for(let i =0;i<value*value;i++)
   {
-    gridRow();
-  }
-}
-// function to create a row of divs.
-function gridRow (){
-  const gameArea = document.querySelector(".gameArea");
-  const input = document.querySelector(".input");
-  const value = input.value;
-  for(let i =0;i<value;i++)
-  {
-    const gridELements = document.createElement("div");
-    gridELements.classList = "gridElements";
-    gameArea.appendChild(gridELements);
+    let gridDimensions = 100 / value;
+    const elements = document.createElement("div")
+    elements.style.height = elements.style.width = `${gridDimensions}%`;
+    elements.classList = "elements";
+    gameArea.appendChild(elements);
   }
 }
