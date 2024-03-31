@@ -47,5 +47,14 @@ function startGrid (){
     elements.style.height = elements.style.width = `${gridDimensions}%`;
     elements.classList = "elements";
     gameArea.appendChild(elements);
+    elements.addEventListener('mouseover',getColor);
   }
+}
+// function to get random colors for the grid.
+function getColor (event){
+const elements = event.target;
+  const red = (Math.random()*255);
+  const green = (Math.random()*255);
+  const blue = (Math.random()*255);
+  elements.style.backgroundColor =`rgb(${red},${green},${blue})`;
 }
